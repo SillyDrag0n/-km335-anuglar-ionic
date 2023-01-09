@@ -1,1 +1,17 @@
 android 11.0 => api level 30
+
+Native: explizit für ein Betriebssystem
+Web: Web-Applikation, nich gerätabhängig und läuft im Browser.
+Hybrid: Mischfrom, sowohl Native- wie auch Web-Komponente.
+
+UI - User Interface: Die Schnittstelle zwischen Mensch und einer Maschine
+UX - User Experience: Interaktion mit einem Produkt. Performance, Stabilität, etc.
+Usability: Benutzerbarkeit oder Bedienungsfreundlichkeit eines interaktiben Systems.
+
+Die 5 E's nach Whitney Quesenbery
+- Effective
+- Efficient
+- Engaging
+- Error Tolerant
+- Easy to Learn
+
