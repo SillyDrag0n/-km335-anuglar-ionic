@@ -1,0 +1,7 @@
+{
+  "name": "G1_MuellerSilvan_Uebungen",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
