@@ -4,16 +4,16 @@ import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 const routes: Routes = [
   {
     path: '',
-    redirectTo: 'folder/Inbox',
+    redirectTo: 'navigation',
     pathMatch: 'full'
   },
   {
-    path: 'folder/:id',
-    loadChildren: () => import('./folder/folder.module').then( m => m.FolderPageModule)
+    path: 'navigation',
+    loadChildren: () => import('./navigation/navigation.module').then( m => m.NavigationPageModule)
   },
   {
-    path: 'test',
-    loadChildren: () => import('./test/test.module').then( m => m.TestPageModule)
+    path: 'navigationdetail',
+    loadChildren: () => import('./navigation-detail/navigation-detail.module').then( m => m.NavigationDetailPageModule)
   }
 ];
 
