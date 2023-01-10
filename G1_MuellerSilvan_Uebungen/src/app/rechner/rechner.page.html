@@ -1,0 +1,116 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>rechner</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid class="ion-grid">
+    <ion-row>
+      <ion-col>
+        <ion-item size="4">
+          <ion-label position="Floating"></ion-label>
+          <ion-input [value]="resultString" placeholder="Ergebniss" [disabled]="true"></ion-input>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <ion-button (click)="addNumber(7)" fill="solid" expand="block">
+          7
+        </ion-button>
+      </ion-col>
+      <ion-col>
+        <ion-button (click)="addNumber(8)" fill="solid" expand="block">
+          8
+        </ion-button>
+      </ion-col>
+      <ion-col>
+        <ion-button (click)="addNumber(9)" fill="solid" expand="block">
+          9
+        </ion-button>
+      </ion-col>
+      <ion-col>
+        <ion-button (click)="addOperator('*')" fill="solid" expand="block">
+          *
+        </ion-button>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <ion-button (click)="addNumber(4)" fill="solid" expand="block">
+          4
+        </ion-button>
+      </ion-col>
+      <ion-col>
+        <ion-button (click)="addNumber(5)" fill="solid" expand="block">
+          5
+        </ion-button>
+      </ion-col>
+      <ion-col>
+        <ion-button (click)="addNumber(6)" fill="solid" expand="block">
+          6
+        </ion-button>
+      </ion-col>
+      <ion-col>
+        <ion-button (click)="addOperator('-')" fill="solid" expand="block">
+          <ion-icon name="remove"></ion-icon>
+        </ion-button>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <ion-button (click)="addNumber(1)" fill="solid" expand="block">
+          1
+        </ion-button>
+      </ion-col>
+      <ion-col>
+        <ion-button (click)="addNumber(2)" fill="solid" expand="block">
+          2
+        </ion-button>
+      </ion-col>
+      <ion-col>
+        <ion-button (click)="addNumber(3)" fill="solid" expand="block">
+          3
+        </ion-button>
+      </ion-col>
+      <ion-col>
+        <ion-button (click)="addOperator('/')" fill="solid" expand="block">
+          /
+        </ion-button>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col size="4">
+        <ion-button (click)="addNumber(0)" fill="solid" expand="block">
+          0
+        </ion-button>
+      </ion-col>
+      <ion-col size="4">
+        <ion-button (click)="addOperator('.')" fill="solid" expand="block">
+          .
+        </ion-button>
+      </ion-col>
+      <ion-col size="4">
+        <ion-button (click)="addOperator('+')" fill="solid" expand="block">
+          <ion-icon name="add"></ion-icon>
+        </ion-button>
+      </ion-col>
+    </ion-row>
+    <ion-row size="6">
+      <ion-col>
+        <ion-button (click)="resetCalc()" fill="solid" expand="block">
+          Reset
+        </ion-button>
+      </ion-col>
+      <ion-col size="6">
+        <ion-button (click)="calculateResult()" fill="solid" expand="block">
+          =
+        </ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

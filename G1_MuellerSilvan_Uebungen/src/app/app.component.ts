@@ -13,6 +13,7 @@ export class AppComponent {
     { title: 'string', url: '/string', icon: 'text' },
     { title: 'array', url: '/array', icon: 'grid' },
     { title: 'dataBinding', url: '/data-binding', icon: 'grid' },
+    { title: 'rechner', url: '/rechner', icon: 'calculator' },
   ];
   constructor() {}
 }
