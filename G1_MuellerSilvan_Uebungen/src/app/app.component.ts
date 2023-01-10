@@ -12,6 +12,7 @@ export class AppComponent {
     { title: 'objects', url: '/objects', icon: 'briefcase' },
     { title: 'string', url: '/string', icon: 'text' },
     { title: 'array', url: '/array', icon: 'grid' },
+    { title: 'dataBinding', url: '/data-binding', icon: 'grid' },
   ];
   constructor() {}
 }

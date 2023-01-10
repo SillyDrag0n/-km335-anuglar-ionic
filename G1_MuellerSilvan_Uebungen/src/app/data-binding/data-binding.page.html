@@ -1,0 +1,38 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Data-binding</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid fixed>
+    <ion-row>
+      <ion-col>
+        <ion-item>
+          <ion-label position="floating">Vorname</ion-label>
+          <ion-input type="Text" [(ngModel)]="userData.vorname"></ion-input>
+        </ion-item>
+      </ion-col>
+      <ion-col>
+        <ion-item>
+          <ion-label position="floating">Name</ion-label>
+          <ion-input type="Text" [(ngModel)]="userData.name"></ion-input>
+        </ion-item>
+      </ion-col>
+      <ion-col>
+        <ion-item>
+          <ion-label position="floating">Alter</ion-label>
+          <ion-input type="number" [(ngModel)]="userData.alter"></ion-input>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <h1 id="ausgabe">Hey, my name is {{userData.vorname + " " + userData.name}} and I'm {{userData.alter}} old</h1>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

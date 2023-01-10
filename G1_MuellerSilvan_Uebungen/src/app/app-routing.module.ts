@@ -30,6 +30,10 @@ const routes: Routes = [
   {
     path: 'array',
     loadChildren: () => import('./array/array.module').then( m => m.ArrayPageModule)
+  },
+  {
+    path: 'data-binding',
+    loadChildren: () => import('./data-binding/data-binding.module').then( m => m.DataBindingPageModule)
   }
 ];
 
