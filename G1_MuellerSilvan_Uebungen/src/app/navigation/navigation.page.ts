@@ -9,12 +9,10 @@ import { Router } from '@angular/router';
 export class NavigationPage implements OnInit {
 
   constructor(private router: Router) { }
-
   ngOnInit() {
   }
 
   navigateToNavigationdetail(){
     this.router.navigateByUrl('/navigationdetail');
   }
-
 }

@@ -3,12 +3,10 @@
     <ion-buttons slot="start">
       <ion-menu-button></ion-menu-button>
     </ion-buttons>
-    <ion-title>NavigationDetail</ion-title>
+    <ion-title>objects</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-  <ion-button (click)="navigateToNavigation()" expand="block" fill="clear" shape="round">
-    Go to Navigation
-  </ion-button>
+  <p>My fullname is {{person.name + " " + person.lastname }}</p>
 </ion-content>

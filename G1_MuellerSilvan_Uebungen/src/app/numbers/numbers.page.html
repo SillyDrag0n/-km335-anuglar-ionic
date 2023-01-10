@@ -3,12 +3,12 @@
     <ion-buttons slot="start">
       <ion-menu-button></ion-menu-button>
     </ion-buttons>
-    <ion-title>NavigationDetail</ion-title>
+    <ion-title>Numbers</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-  <ion-button (click)="navigateToNavigation()" expand="block" fill="clear" shape="round">
-    Go to Navigation
-  </ion-button>
+  <p>Die erste Rechnung gibt {{ 5 + 7 }}</p>
+  <p>Die erste Rechnung gibt {{ 25 / 5 }}</p>
+  <p>Die erste Rechnung gibt {{ 100 - 1 }}</p>
 </ion-content>

@@ -8,6 +8,10 @@ export class AppComponent {
   public appPages = [
     { title: 'navigation', url: '/navigation', icon: 'locate' },
     { title: 'navigationDetail', url: '/navigationdetail', icon: 'search' },
+    { title: 'numbers', url: '/numbers', icon: 'calculator' },
+    { title: 'objects', url: '/objects', icon: 'briefcase' },
+    { title: 'string', url: '/string', icon: 'text' },
+    { title: 'array', url: '/array', icon: 'grid' },
   ];
   constructor() {}
 }

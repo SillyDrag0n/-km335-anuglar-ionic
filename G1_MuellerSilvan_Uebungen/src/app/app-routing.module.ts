@@ -14,6 +14,22 @@ const routes: Routes = [
   {
     path: 'navigationdetail',
     loadChildren: () => import('./navigation-detail/navigation-detail.module').then( m => m.NavigationDetailPageModule)
+  },
+  {
+    path: 'numbers',
+    loadChildren: () => import('./numbers/numbers.module').then( m => m.NumbersPageModule)
+  },
+  {
+    path: 'string',
+    loadChildren: () => import('./string/string.module').then( m => m.StringPageModule)
+  },
+  {
+    path: 'objects',
+    loadChildren: () => import('./objects/objects.module').then( m => m.ObjectsPageModule)
+  },
+  {
+    path: 'array',
+    loadChildren: () => import('./array/array.module').then( m => m.ArrayPageModule)
   }
 ];
 
