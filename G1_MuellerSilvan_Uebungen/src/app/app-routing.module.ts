@@ -42,6 +42,10 @@ const routes: Routes = [
   {
     path: 'alert',
     loadChildren: () => import('./alert/alert.module').then( m => m.AlertPageModule)
+  },
+  {
+    path: 'silvanundpatricessuperduperuploadprojekt',
+    loadChildren: () => import('./silvanundpatricessuperduperuploadprojekt/silvanundpatricessuperduperuploadprojekt.module').then( m => m.SilvanundpatricessuperduperuploadprojektPageModule)
   }
 ];
 
