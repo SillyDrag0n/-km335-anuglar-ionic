@@ -16,6 +16,7 @@ export class AppComponent {
     { title: 'rechner', url: '/rechner', icon: 'calculator' },
     { title: 'alert', url: '/alert', icon: 'warning' },
     { title: 'silvanundpatricessuperduperuploadprojekt', url: '/silvanundpatricessuperduperuploadprojekt', icon: 'document' },
+    { title: 'minecraft', url: '/minecraft', icon: 'document' },
   ];
   constructor() {}
 }
