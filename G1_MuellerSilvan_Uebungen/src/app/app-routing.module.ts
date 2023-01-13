@@ -38,6 +38,10 @@ const routes: Routes = [
   {
     path: 'rechner',
     loadChildren: () => import('./rechner/rechner.module').then( m => m.RechnerPageModule)
+  },
+  {
+    path: 'alert',
+    loadChildren: () => import('./alert/alert.module').then( m => m.AlertPageModule)
   }
 ];
 
