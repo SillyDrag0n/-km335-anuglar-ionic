@@ -46,6 +46,10 @@ const routes: Routes = [
   {
     path: 'silvanundpatricessuperduperuploadprojekt',
     loadChildren: () => import('./silvanundpatricessuperduperuploadprojekt/silvanundpatricessuperduperuploadprojekt.module').then( m => m.SilvanundpatricessuperduperuploadprojektPageModule)
+  },
+  {
+    path: 'minecraft',
+    loadChildren: () => import('./minecraft/minecraft.module').then( m => m.MinecraftPageModule)
   }
 ];
 
