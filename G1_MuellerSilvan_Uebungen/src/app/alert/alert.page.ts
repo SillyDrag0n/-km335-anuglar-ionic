@@ -23,7 +23,16 @@ export class AlertPage implements OnInit {
           text: 'OK',
           role: 'confirm',
           handler: (alertData) => {
-            this.saveNickname(alertData.nickname);
+            if(alertData.nickname)
+            {
+              this.saveNickname(alertData.nickname);
+              return true;
+            }
+            else
+            {
+              return false;
+            }
+            
           },
         },
       ],
