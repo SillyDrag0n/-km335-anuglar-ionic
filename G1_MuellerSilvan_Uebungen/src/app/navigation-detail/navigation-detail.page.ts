@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-navigation-detail',
@@ -7,10 +7,11 @@ import { Router } from '@angular/router';
   styleUrls: ['./navigation-detail.page.scss'],
 })
 export class NavigationDetailPage implements OnInit {
-
-  constructor(private router: Router ) { }
+  navigateDetailId: any = 0;
+  constructor(private router: Router, private route: ActivatedRoute) { }
 
   ngOnInit() {
+    this.navigateDetailId = this.route.snapshot.paramMap.get('id');
   }
 
   navigateToNavigation(){

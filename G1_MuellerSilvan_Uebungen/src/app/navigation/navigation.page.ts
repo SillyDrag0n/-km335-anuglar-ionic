@@ -7,12 +7,13 @@ import { Router } from '@angular/router';
   styleUrls: ['./navigation.page.scss'],
 })
 export class NavigationPage implements OnInit {
+  navigationNumber: any = 0;
 
   constructor(private router: Router) { }
   ngOnInit() {
   }
 
   navigateToNavigationdetail(){
-    this.router.navigateByUrl('/navigationdetail');
+    this.router.navigate(['/navigationdetail'], this.navigationNumber);
   }
 }
