@@ -1,5 +1,10 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
+import { AngularFireAuthGuard, redirectUnauthorizedTo, redirectLoggedInTo } from '@angular/fire/compat/auth-guard';
+
+// Standardverhalten festlegen
+const redirectUnauthorizedToLogin = () => redirectUnauthorizedTo(['login']);
+const redirectLoggedInToRoot = () => redirectLoggedInTo(['']);
 
 const routes: Routes = [
   {
@@ -54,6 +59,14 @@ const routes: Routes = [
   {
     path: 'newsletter',
     loadChildren: () => import('./newsletter/newsletter.module').then( m => m.NewsletterPageModule)
+  },
+  {
+    path: 'login',
+    loadChildren: () => import('./login/login.module').then( m => m.LoginPageModule)
+  },
+  {
+    path: 'register',
+    loadChildren: () => import('./register/register.module').then( m => m.RegisterPageModule)
   }
 ];
 

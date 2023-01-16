@@ -18,6 +18,8 @@ export class AppComponent {
     { title: 'silvanundpatricessuperduperuploadprojekt', url: '/silvanundpatricessuperduperuploadprojekt', icon: 'document' },
     { title: 'minecraft', url: '/minecraft', icon: 'document' },
     { title: 'newsletter', url: '/newsletter', icon: 'briefcase' },
+    { title: 'login', url: '/login', icon: 'log-in' },
+    { title: 'register', url: '/register', icon: 'person-add' },
   ];
 
   constructor() {}
