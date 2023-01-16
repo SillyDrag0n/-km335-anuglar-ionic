@@ -1,0 +1,108 @@
+<ion-header>
+    <ion-toolbar color="danger">
+        <ion-buttons slot="start">
+            <ion-menu-button></ion-menu-button>
+        </ion-buttons>
+        <ion-title>Chat</ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content
+    class="message-list"
+    (swipeLeft)="swipeEvent($event)"
+    (swipeRight)="swipeEvent($event)"
+>
+    <ion-list>
+        <ng-container *ngFor="let chatMessage of chatMessages$ | async">
+            <ng-container
+                *ngIf="isMyMessage(chatMessage.author); else isForeignMessage"
+            >
+                <ion-item class="my-message ion-no-padding" lines="none">
+                    <ion-label class="message-bubble" slot="end">
+                        <p
+                            class="my-message-text"
+                            [style.max-width]="getMessageBubbleWidth(chatMessage.text)"
+                        >
+                            {{chatMessage.text}}
+                        </p>
+                        <div class="message-date" *ngIf="showDates">
+                            {{ chatMessage.dateCreated.toDate() | date:
+                            'dd.MM.yyyy HH:mm' }}
+                        </div>
+                    </ion-label>
+                </ion-item>
+            </ng-container>
+            <ng-template #isForeignMessage>
+                <ion-item lines="none" class="other-message ion-no-padding">
+                    <ion-avatar slot="start">
+                        <ion-img
+                            [src]="chatMessage.avatarImageUrl ? chatMessage.avatarImageUrl : '/assets/avatar.svg'"
+                        ></ion-img>
+                    </ion-avatar>
+                    <ion-label class="message-bubble ion-text-wrap">
+                        <h5 [style.color]="stringToColor(chatMessage.author)">
+                            {{chatMessage.author}}
+                        </h5>
+                        <p
+                            [style.max-width]="getMessageBubbleWidth(chatMessage.text)"
+                            *ngIf="chatMessage.text && !godMode"
+                        >
+                            {{chatMessage.text}}
+                        </p>
+                        <div class="message-date" *ngIf="showDates">
+                            {{ chatMessage.dateCreated.toDate() | date:
+                            'dd.MM.yyyy HH:mm'}}
+                        </div>
+                        <ion-input
+                            *ngIf="godMode"
+                            type="text"
+                            name="updateMessage"
+                            (keyup.enter)="updateMessage(chatMessage.id, $any($event.target).value)"
+                            [value]="chatMessage.text"
+                        ></ion-input>
+                    </ion-label>
+                    <ion-button
+                        (click)="deleteMessage(chatMessage.id)"
+                        color="danger"
+                        fill="clear"
+                        *ngIf="godMode"
+                        ><ion-icon slot="start" name="trash"></ion-icon
+                    ></ion-button>
+                </ion-item>
+            </ng-template>
+        </ng-container>
+        <ion-item *ngIf="godMode">
+            <ion-label color="warning" slot="end"
+                ><ion-icon name="warning"></ion-icon> Gott-Modus aktiv
+                <ion-icon name="warning"></ion-icon
+            ></ion-label>
+        </ion-item>
+    </ion-list>
+</ion-content>
+
+<ion-footer>
+    <form [formGroup]="chatForm" (ngSubmit)="sendMessage()">
+        <ion-toolbar>
+            <ion-textarea
+                autofocus="true"
+                type="text"
+                name="message"
+                placeholder="Gib eine Nachricht ein"
+                formControlName="message"
+                class="chat-message-input"
+            >
+            </ion-textarea>
+
+            <ion-button
+                color="danger"
+                type="submit"
+                [disabled]="chatForm.invalid"
+                slot="end"
+            >
+                <ion-icon *ngIf="!showSpinnerIcon" name="send"> </ion-icon>
+                <ion-spinner *ngIf="showSpinnerIcon" name="bubbles">
+                </ion-spinner>
+            </ion-button>
+        </ion-toolbar>
+    </form>
+</ion-footer>

@@ -1,0 +1,7 @@
+{
+  "name": "modul-335-sidemenu",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular"
+}

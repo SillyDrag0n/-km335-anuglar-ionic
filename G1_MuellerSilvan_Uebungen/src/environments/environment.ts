@@ -4,17 +4,19 @@
 
 export const environment = {
   production: false,
-  // Firbase Verbindungsparameter hinzufügen
+  m335GroupNumber: 1,
+  // Neu hinzufügen
   firebaseConfig: {
-    apiKey: "AIzaSyArTTnqykFNgwBRL8IldPCFn8dobVVghBI",
-    authDomain: "m335-login.firebaseapp.com",
-    databaseURL: "https://m335-login.firebaseio.com",
-    projectId: "m335-login",
-    storageBucket: "m335-login.appspot.com",
-    messagingSenderId: "14955115856",
-    appId: "1:14955115856:web:d53930b7c82b6d01106855"
+    apiKey: "AIzaSyDJgmwqHki4FjNxduVqkoYUQIp8G0QYyOo",
+    authDomain: "m335-uebungen.firebaseapp.com",
+    databaseURL: "https://m335-uebungen.firebaseio.com",
+    projectId: "m335-uebungen",
+    storageBucket: "m335-uebungen.appspot.com",
+    messagingSenderId: "675049996439",
+    appId: "1:675049996439:web:9b2aed3cfc2b9fabe669d2"
   }
 };
+
 
 /*
  * For easier debugging in development mode, you can import the following file

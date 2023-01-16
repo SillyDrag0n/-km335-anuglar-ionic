@@ -1,0 +1,59 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-buttons slot="start">
+            <ion-menu-button></ion-menu-button>
+        </ion-buttons>
+        <ion-title>Navigation</ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+    <ion-grid>
+        <ion-row>
+            <h1>
+                Navigation zur Detail-Seite mittels <code>Angular Routing</code>
+            </h1>
+        </ion-row>
+        <ion-row>
+            <ion-button color="dark" [href]="navigateToFormTS">
+                [HREF]
+            </ion-button>
+        </ion-row>
+        <ion-row>
+            <ion-button color="medium" href="/navigation-detail">
+                HREF
+            </ion-button>
+        </ion-row>
+        <ion-row>
+            <ion-button color="success" (click)="navToDetailPageByURL()">
+                By URL
+            </ion-button>
+        </ion-row>
+        <ion-row>
+            <ion-button
+                color="tertiary"
+                (click)="navToDetailPageWithParameters()"
+            >
+                mit Parameter
+            </ion-button>
+        </ion-row>
+        <ion-row>
+            <ion-button
+                color="danger"
+                (click)="navToDetailPageWithParametersOverURL()"
+            >
+                mit Parameter über die URL
+            </ion-button>
+        </ion-row>
+        <ion-row>
+            <ion-button color="dark" [routerLink]="navigateToFormTS">
+                [RouterLink]
+            </ion-button>
+        </ion-row>
+        <ion-row>
+            <ion-button color="medium" routerLink="/navigation-detail">
+                RouterLink
+            </ion-button>
+        </ion-row>
+    </ion-grid>
+</ion-content>

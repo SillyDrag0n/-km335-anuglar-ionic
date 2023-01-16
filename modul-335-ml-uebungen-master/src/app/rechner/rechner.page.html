@@ -1,0 +1,196 @@
+<ion-header>
+    <ion-toolbar color="medium">
+        <ion-buttons slot="start">
+            <ion-menu-button></ion-menu-button>
+        </ion-buttons>
+        <ion-title>Rechner</ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+    <ion-grid>
+        <ion-row class="row-header">
+            <ion-col size="12">
+                <ion-input
+                    type="text"
+                    [(ngModel)]="input"
+                    (keyup.enter)="calculate()"
+                >
+                </ion-input>
+            </ion-col>
+            <ion-col size="12">
+                <div style="text-align: right" class="history">
+                    <p style="color: #888888">{{history}}</p>
+                </div>
+            </ion-col>
+        </ion-row>
+        <div class="bindToBottom">
+            <ion-row>
+                <ion-col size="3">
+                    <ion-button
+                        (click)="operatorClick('/')"
+                        ng-class="{active: operator === '/'}"
+                        color="secondary"
+                        expand="full"
+                    >
+                        /
+                    </ion-button>
+                </ion-col>
+                <ion-col size="3">
+                    <ion-button
+                        (click)="operatorClick('*')"
+                        ng-class="{active: operator === '*'}"
+                        color="secondary"
+                        expand="full"
+                    >
+                        *
+                    </ion-button>
+                </ion-col>
+                <ion-col size="3">
+                    <ion-button
+                        (click)="operatorClick('-')"
+                        ng-class="{active: operator === '-'}"
+                        color="secondary"
+                        expand="full"
+                    >
+                        -
+                    </ion-button>
+                </ion-col>
+                <ion-col size="3">
+                    <ion-button
+                        (click)="operatorClick('+')"
+                        ng-class="{active: operator === '+'}"
+                        color="secondary"
+                        expand="full"
+                    >
+                        +
+                    </ion-button>
+                </ion-col>
+            </ion-row>
+            <ion-row>
+                <ion-col size="4">
+                    <ion-button
+                        (click)="numberClick('7')"
+                        color="light"
+                        expand="full"
+                    >
+                        7
+                    </ion-button>
+                </ion-col>
+                <ion-col size="4">
+                    <ion-button
+                        (click)="numberClick('8')"
+                        color="light"
+                        expand="full"
+                    >
+                        8
+                    </ion-button>
+                </ion-col>
+                <ion-col size="4">
+                    <ion-button
+                        (click)="numberClick('9')"
+                        color="light"
+                        expand="full"
+                    >
+                        9
+                    </ion-button>
+                </ion-col>
+            </ion-row>
+            <ion-row>
+                <ion-col size="4">
+                    <ion-button
+                        (click)="numberClick('4')"
+                        color="light"
+                        expand="full"
+                    >
+                        4
+                    </ion-button>
+                </ion-col>
+                <ion-col size="4">
+                    <ion-button
+                        (click)="numberClick('5')"
+                        color="light"
+                        expand="full"
+                    >
+                        5
+                    </ion-button>
+                </ion-col>
+                <ion-col size="4">
+                    <ion-button
+                        (click)="numberClick('6')"
+                        color="light"
+                        expand="full"
+                    >
+                        6
+                    </ion-button>
+                </ion-col>
+            </ion-row>
+            <ion-row>
+                <ion-col size="4">
+                    <ion-button
+                        (click)="numberClick('1')"
+                        color="light"
+                        expand="full"
+                    >
+                        1
+                    </ion-button>
+                </ion-col>
+                <ion-col size="4">
+                    <ion-button
+                        (click)="numberClick('2')"
+                        color="light"
+                        expand="full"
+                    >
+                        2
+                    </ion-button>
+                </ion-col>
+                <ion-col size="4">
+                    <ion-button
+                        (click)="numberClick('3')"
+                        color="light"
+                        expand="full"
+                    >
+                        3
+                    </ion-button>
+                </ion-col>
+            </ion-row>
+            <ion-row>
+                <ion-col size="4">
+                    <ion-button (click)="clear()" color="danger" expand="full">
+                        AC
+                    </ion-button>
+                </ion-col>
+                <ion-col size="4">
+                    <ion-button
+                        (click)="numberClick('0')"
+                        color="light"
+                        expand="full"
+                    >
+                        0
+                    </ion-button>
+                </ion-col>
+                <ion-col size="4">
+                    <ion-button
+                        (click)="numberClick('.')"
+                        color="light"
+                        expand="full"
+                    >
+                        .
+                    </ion-button>
+                </ion-col>
+            </ion-row>
+            <ion-row>
+                <ion-col size="12">
+                    <ion-button
+                        (click)="calculate()"
+                        [disabled]="canCalculate()"
+                        color="dark"
+                        expand="full"
+                    >
+                        =
+                    </ion-button>
+                </ion-col>
+            </ion-row>
+        </div>
+    </ion-grid>
+</ion-content>

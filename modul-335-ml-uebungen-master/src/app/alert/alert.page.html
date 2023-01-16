@@ -1,0 +1,43 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-buttons slot="start"
+            ><ion-menu-button></ion-menu-button
+        ></ion-buttons>
+        <ion-title>Alert</ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+    <ion-grid>
+        <ion-row>
+            <ion-col size="12"
+                ><ion-button (click)="showNicknameAlert()"
+                    >Nickname erfassen</ion-button
+                >
+            </ion-col>
+            <ion-col size="12">
+                <h3 *ngIf="nickname">
+                    Ich liebe es
+                    <ion-text color="medium">{{ nickname }}</ion-text> genannt
+                    zu werden!
+                </h3>
+            </ion-col>
+        </ion-row>
+        <ion-row>
+            <ion-col size="12">
+                <ion-button
+                    style="width: 150px; height: 150px"
+                    (press)="buttonPressed()"
+                    color="dark"
+                >
+                    Press me
+                </ion-button>
+            </ion-col>
+            <ion-col size="12">
+                <h3 *ngIf="btnCounter">
+                    Er wurde {{ btnCounter }} mal gedrückt!
+                </h3>
+            </ion-col>
+        </ion-row>
+    </ion-grid>
+</ion-content>

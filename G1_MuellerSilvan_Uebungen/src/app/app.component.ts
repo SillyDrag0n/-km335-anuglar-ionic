@@ -21,7 +21,7 @@ export class AppComponent {
     { title: 'login', url: '/login', icon: 'log-in' },
     { title: 'register', url: '/register', icon: 'person-add' },
     { title: 'storage', url: '/storage', icon: 'cube' },
-    { title: 'chat', url: '/chat', icon: 'cube' },
+    { title: 'chat', url: '/chat', icon: 'chat' },
   ];
 
   constructor() {}

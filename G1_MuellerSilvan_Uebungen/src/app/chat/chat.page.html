@@ -1,9 +1,85 @@
 <ion-header>
-  <ion-toolbar>
+  <ion-toolbar color="danger">
+    <ion-buttons slot="start">
+        <ion-back-button></ion-back-button>
+    </ion-buttons>
     <ion-title>chat</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-
+  <ion-content
+  class="message-list"
+>
+  <ion-list>
+      <ng-container
+          *ngFor="let chatMessage of chatMessages$ | async"
+      >
+          <ng-container
+              *ngIf="isMyMessage(chatMessage.author); else isForeignMessage"
+          >
+              <ion-item class="my-message ion-no-padding" lines="none">
+                  <ion-label class="message-bubble" slot="end">
+                      <p
+                          class="my-message-text"
+                          [style.max-width]="getMessageBubbleWidth(chatMessage.text)"
+                      >
+                          {{ chatMessage.text }}
+                      </p>
+                      <div class="message-date" >
+                          {{ chatMessage.dateCreated.toDate() | date:
+                          'dd.MM.yyyy HH:mm' }}
+                      </div>
+                  </ion-label>
+              </ion-item>
+          </ng-container>
+          <ng-template #isForeignMessage>
+              <ion-item lines="none" class="other-message ion-no-padding">
+                  <ion-avatar slot="start">
+                      <ion-img
+                          [src]="(chatMessage.avatarImageUrl ? chatMessage.avatarImageUrl : fallbackAuthorAvatarImageUrl)"
+                      ></ion-img>
+                  </ion-avatar>
+                  <ion-label class="message-bubble ion-text-wrap">
+                      <h5 [style.color]="stringToColor(chatMessage.author)">
+                          {{chatMessage.author}}
+                      </h5>
+                      <p
+                          [style.max-width]="getMessageBubbleWidth(chatMessage.text)"
+                      >
+                          {{chatMessage.text}}
+                      </p>
+                      <div class="message-date" >
+                          {{ chatMessage.dateCreated.toDate() | date:
+                          'dd.MM.yyyy HH:mm'}}
+                      </div>
+                  </ion-label>
+              </ion-item>
+          </ng-template>
+      </ng-container>
+  </ion-list>
 </ion-content>
+
+<ion-footer>
+  <form [formGroup]="chatForm" (ngSubmit)="sendMessage()">
+      <ion-toolbar>
+          <ion-textarea
+              type="text"
+              name="message" 
+              formControlName="message"
+              class="chat-message-input"
+              placeholder="your message here"
+          >
+          </ion-textarea>
+          <ion-item>
+          </ion-item>
+
+          <ion-button
+            block color="primary" type="submit" icon="send-outline" [disabled]="chatForm.invalid"
+          >
+            <ion-icon *ngIf="!showSpinnerIcon" name="send"> </ion-icon>
+            <ion-spinner *ngIf="showSpinnerIcon" name="bubbles"></ion-spinner>
+          </ion-button>
+      </ion-toolbar>
+  </form>
+</ion-footer>

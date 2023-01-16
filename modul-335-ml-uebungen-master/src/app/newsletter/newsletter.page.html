@@ -1,0 +1,38 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-buttons slot="start"
+            ><ion-menu-button></ion-menu-button
+        ></ion-buttons>
+        <ion-title>Newsletter</ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+    <ion-img src="assets/newsletter.gif"></ion-img>
+    <h1>Jetzt für unseren neusten Newsletter anmelden</h1>
+
+    <form [formGroup]="newsletterForm" (ngSubmit)="sendNewsletter()">
+        <ion-item>
+            <ion-label position="floating">
+                Deine Email <ion-text color="danger">*</ion-text>
+            </ion-label>
+            <ion-input formControlName="email" type="text"></ion-input>
+        </ion-item>
+        <div class="formErrors">
+            <ion-label
+                color="danger"
+                *ngIf="!newsletterForm.controls['email'].valid && newsletterForm.controls['email'].touched"
+            >
+                Snap, das ist aber keine gültige Email mein Sportsfreund
+            </ion-label>
+        </div>
+        <ion-button
+            block
+            color="primary"
+            type="submit"
+            [disabled]="newsletterForm.invalid"
+        >
+            Jetzt anmelden!
+        </ion-button>
+    </form>
+</ion-content>

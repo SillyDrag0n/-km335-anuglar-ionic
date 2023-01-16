@@ -1,0 +1,33 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-buttons slot="start"
+            ><ion-menu-button></ion-menu-button
+        ></ion-buttons>
+        <ion-title>Array</ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+    <h4>Hier greifen wir auf ein einzelnes Frucht-Element zu:</h4>
+    <p>{{ fruechte[2].name }}</p>
+    <h4>und hier noch etwas erweitert als Liste mit ngFor</h4>
+    <ion-list id="arrays-list1">
+        <ion-item *ngFor="let frucht of fruechte">
+            <ion-label>{{frucht.name}}</ion-label>
+        </ion-item>
+    </ion-list>
+    <h4>und zuletzte die Liste mit Bildern</h4>
+    <ion-list id="arrays-list2">
+        <ion-item *ngFor="let frucht of fruechte2">
+            <ion-avatar slot="start">
+                <ion-img [src]="frucht.imgUrl"></ion-img>
+            </ion-avatar>
+            <ion-label><h2>{{ frucht.name }}</h2></ion-label>
+        </ion-item>
+    </ion-list>
+    <div id="arrays-markdown3" class="show-list-numbers-and-dots">
+        <p style="color: #000000">
+            Anzahl Früchte im Array: {{ fruechte2.length }}
+        </p>
+    </div>
+</ion-content>

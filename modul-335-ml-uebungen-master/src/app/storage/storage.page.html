@@ -1,0 +1,26 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-buttons slot="start">
+            <ion-menu-button></ion-menu-button>
+        </ion-buttons>
+        <ion-title>Lokaler Storage</ion-title>
+    </ion-toolbar>
+</ion-header>
+<ion-content class="ion-padding">
+    <h3>Hier sind einige Einstellungen möglich:</h3>
+    <ion-item>
+        <ion-label>Dein Name</ion-label>
+        <ion-input type="text" [(ngModel)]="name"></ion-input>
+    </ion-item>
+    <ion-item>
+        <ion-label> Push-Benachrichtungen erhalten</ion-label>
+        <ion-toggle [(ngModel)]="pushToggle"></ion-toggle>
+    </ion-item>
+    <ion-item>
+        <ion-label> Newsletter senden</ion-label>
+        <ion-toggle color="warning" [(ngModel)]="newsletterToggle"></ion-toggle>
+    </ion-item>
+    <ion-button color="secondary" (click)="speichereEinstellungen()">
+        Einstellungen speichern
+    </ion-button>
+</ion-content>

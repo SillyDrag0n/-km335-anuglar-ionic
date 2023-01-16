@@ -1,0 +1,41 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-buttons slot="start">
+            <ion-menu-button></ion-menu-button>
+        </ion-buttons>
+        <ion-title>Filter</ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+    <ion-item>
+        <ion-label>Gib einen Text ein</ion-label>
+        <ion-input type="text" [(ngModel)]="input"></ion-input>
+    </ion-item>
+    <ion-item lines="none">
+        <ion-label>Deine Eingabe in GROSSBUCHSTABEN</ion-label>
+        <p>{{ input | uppercase }}</p>
+    </ion-item>
+    <ion-item lines="none">
+        <ion-label>Deine Eingabe in kleinbuchstaben</ion-label>
+        <p>{{ input | lowercase }}</p>
+    </ion-item>
+    <hr />
+    <ion-item>
+        <ion-label>Wähle ein Datum</ion-label>
+        <ion-input type="date" [(ngModel)]="datum"></ion-input>
+    </ion-item>
+    <ion-item lines="none">
+        <ion-label>Dein Datum im US-Format - lange Form:</ion-label>
+        <p>{{ datum | date:'full' }}</p>
+    </ion-item>
+
+    <ion-item lines="none">
+        <ion-label>Dein Datum im US-Format - kurzer Form:</ion-label>
+        <p>{{ datum | date:'short' }}</p>
+    </ion-item>
+    <ion-item lines="none">
+        <ion-label>Dein Datum im CH-Format:</ion-label>
+        <p>{{ datum | date:'dd.MM.yyyy ' }}</p>
+    </ion-item>
+</ion-content>
