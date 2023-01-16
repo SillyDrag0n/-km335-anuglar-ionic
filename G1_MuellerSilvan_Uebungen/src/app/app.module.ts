@@ -15,6 +15,7 @@ import { AngularFireAuthModule } from '@angular/fire/compat/auth';
 import { environment } from "../environments/environment";
 
 // Ionic/Storage importieren
+import { Drivers, Storage } from '@ionic/storage';
 import { IonicStorageModule } from '@ionic/storage-angular';
 
 
@@ -27,6 +28,7 @@ import { IonicStorageModule } from '@ionic/storage-angular';
     AngularFirestoreModule, 
     AngularFireAuthModule,
     IonicStorageModule.forRoot(),
+    
   ],
   providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],
   bootstrap: [AppComponent],
