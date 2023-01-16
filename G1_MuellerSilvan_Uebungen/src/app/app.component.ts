@@ -17,6 +17,8 @@ export class AppComponent {
     { title: 'alert', url: '/alert', icon: 'warning' },
     { title: 'silvanundpatricessuperduperuploadprojekt', url: '/silvanundpatricessuperduperuploadprojekt', icon: 'document' },
     { title: 'minecraft', url: '/minecraft', icon: 'document' },
+    { title: 'newsletter', url: '/newsletter', icon: 'briefcase' },
   ];
+
   constructor() {}
 }

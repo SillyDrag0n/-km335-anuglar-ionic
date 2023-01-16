@@ -50,6 +50,10 @@ const routes: Routes = [
   {
     path: 'minecraft',
     loadChildren: () => import('./minecraft/minecraft.module').then( m => m.MinecraftPageModule)
+  },
+  {
+    path: 'newsletter',
+    loadChildren: () => import('./newsletter/newsletter.module').then( m => m.NewsletterPageModule)
   }
 ];
 
