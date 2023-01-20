@@ -1,0 +1,53 @@
+<ion-header color="Medium">
+    <ion-toolbar>
+        <ion-buttons slot="start"><ion-menu-button></ion-menu-button></ion-buttons>
+        <ion-title>Chat</ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-no-padding">
+    <ion-list>
+        <ng-container
+            *ngFor="let chatMessage of chatMessages$ | async"
+        >
+            <ng-container
+                *ngIf="isMyMessage(chatMessage.author); else isForeignMessage"
+            >
+                <ion-item class="my-message ion-no-padding" lines="none">
+                    <ion-label class="message-bubble" slot="end">
+                        <p
+                            class="my-message-text"
+                        >
+                            {{ chatMessage.text }}
+                        </p>
+                        <div class="message-date" >
+                            {{ chatMessage.dateCreated.toDate() | date:
+                            'dd.MM.yyyy HH:mm' }}
+                        </div>
+                    </ion-label>
+                </ion-item>
+            </ng-container>
+            <ng-template #isForeignMessage>
+                <ion-item lines="none" class="other-message ion-no-padding">
+                    <ion-avatar slot="start">
+                    </ion-avatar>
+                    <ion-label class="message-bubble ion-text-wrap">
+                            {{chatMessage.author}}
+                            {{chatMessage.text}}
+                        <div class="message-date" >
+                            {{ chatMessage.dateCreated.toDate() | date:
+                            'dd.MM.yyyy HH:mm'}}
+                        </div>
+                    </ion-label>
+                </ion-item>
+            </ng-template>
+        </ng-container>
+    </ion-list>
+    <ion-footer>
+        <ion-toolbar>
+            <ion-fab-button slot="end">
+                <ion-icon name="send"></ion-icon>
+            </ion-fab-button>
+        </ion-toolbar>
+    </ion-footer>
+  </ion-content>

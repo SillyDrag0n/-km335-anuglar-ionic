@@ -1,0 +1,21 @@
+<ion-header>
+    <ion-toolbar color="Medium">
+        <ion-buttons slot="start"><ion-menu-button></ion-menu-button></ion-buttons>
+        <ion-title>News</ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <ion-list>
+        <!-- TODO: News-Elemente in einer Schlaufe anzeigen, siehe Ionic Doku für richtigen Style -->
+        <ion-item size="3" *ngFor="let newsEntry of newsEntry$ | async" (click)="onClickEvent(newsEntry)">
+            <ion-thumbnail slot="start">
+                <ion-img [src]="newsEntry.imgUrl"></ion-img>
+            </ion-thumbnail>
+            <ion-label>
+                <p class="titleText">{{newsEntry.title}}</p>
+                <p>{{newsEntry.slug}}</p>
+            </ion-label>
+        </ion-item>
+    </ion-list>
+</ion-content>

@@ -1,0 +1,18 @@
+<ion-header>
+    <ion-toolbar color="tertiary">
+        <ion-buttons slot="start">
+            <ion-menu-button></ion-menu-button>
+        </ion-buttons>
+        <ion-title>Gallerie</ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+    <ion-grid>
+        <ion-row>
+            <ion-col size="6" *ngFor="let image of gallerie$| async">
+                <ion-img [src]="image.imgUrl" width="100%"></ion-img>
+            </ion-col>
+        </ion-row>
+    </ion-grid>
+</ion-content>

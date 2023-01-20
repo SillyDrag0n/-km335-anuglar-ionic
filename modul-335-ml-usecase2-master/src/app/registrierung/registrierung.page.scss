@@ -1,0 +1,39 @@
+ion-grid,
+ion-row,
+ion-col,
+col-12 {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+}
+.spacer {
+    padding-top: 120px;
+}
+.registrierung-content {
+    background-color: var(--ion-color-light);
+}
+ion-input {
+    background-color: var(--ion-color-white) !important;
+    border: 1px solid var(--ion-color-medium);
+    input {
+        text-align: center;
+        color: var(--ion-color-primary);
+    }
+}
+.actionButtons {
+    position: fixed;
+    bottom: 60px;
+    left: 0;
+    right: 0;
+    ion-col {
+        padding: 0;
+        margin: 0;
+        border: 1px solid var(--ion-color-white);
+        button {
+            padding: 0;
+            margin: 0;
+        }
+    }
+}
+input::placeholder {
+    color: var(--ion-color-primary);
+}

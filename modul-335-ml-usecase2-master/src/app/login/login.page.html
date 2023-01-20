@@ -1,0 +1,55 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-title>Login</ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding ion-text-center">
+    <form [formGroup]="loginForm" (keydown.enter)="doLogin()">
+        <ion-grid>
+            <ion-row class="spacer"> </ion-row>
+            <ion-row>
+                <ion-col size="12">
+                    <ion-input
+                        type="text"
+                        formControlName="email"
+                        placeholder="EMAIL"
+                    >
+                    </ion-input>
+                </ion-col>
+            </ion-row>
+            <ion-row>
+                <ion-col size="12">
+                    <ion-input
+                        type="password"
+                        formControlName="password"
+                        placeholder="PASSWORT"
+                    >
+                    </ion-input>
+                </ion-col>
+            </ion-row>
+            <ion-row class="actionButtons">
+                <ion-col size="12">
+                    <ion-button
+                        color="dark"
+                        expand="full"
+                        fill="clear"
+                        (click)="gotoRegistrierung()"
+                    >
+                        ACCOUNT ERSTELLEN
+                    </ion-button>
+                </ion-col>
+                <ion-col size="12">
+                    <ion-button
+                        type="submit"
+                        expand="full"
+                        [disabled]="!loginForm.valid"
+                        (click)="doLogin()"
+                    >
+                        LOGIN
+                    </ion-button>
+                </ion-col>
+            </ion-row>
+        </ion-grid>
+    </form>
+</ion-content>
