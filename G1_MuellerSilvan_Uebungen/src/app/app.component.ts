@@ -22,6 +22,7 @@ export class AppComponent {
     { title: 'register', url: '/register', icon: 'person-add' },
     { title: 'storage', url: '/storage', icon: 'cube' },
     { title: 'chat', url: '/chat', icon: 'chat' },
+    { title: 'pushNotification', url: '/push-notification', icon: 'chat' },
   ];
 
   constructor() {}

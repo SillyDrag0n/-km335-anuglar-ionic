@@ -75,6 +75,10 @@ const routes: Routes = [
   {
     path: 'chat',
     loadChildren: () => import('./chat/chat.module').then( m => m.ChatPageModule)
+  },
+  {
+    path: 'push-notification',
+    loadChildren: () => import('./push-notification/push-notification.module').then( m => m.PushNotificationPageModule)
   }
 ];
 
